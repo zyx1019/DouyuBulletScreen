@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="E:/wamp64/www/java/Dy_BulletScreen_Demo/lib/commons-lang3-3.3.2.jar"/>
+	<classpathentry kind="lib" path="E:/wamp64/www/java/Dy_BulletScreen_Demo/lib/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="E:/wamp64/www/java/Dy_BulletScreen_Demo/lib/httpclient-4.5.jar"/>
+	<classpathentry kind="lib" path="E:/wamp64/www/java/Dy_BulletScreen_Demo/lib/httpcore-4.4.4.jar"/>
+	<classpathentry kind="lib" path="E:/wamp64/www/java/Dy_BulletScreen_Demo/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="E:/wamp64/www/java/Dy_BulletScreen_Demo/lib/jna-platform-4.1.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

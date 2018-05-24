@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+	<!-- 必须项-->
+    <appender name="infoAppender" class="org.apache.log4j.DailyRollingFileAppender">
+    	<param name="Encoding" value="UTF-8" />
+    	<param name="File" value="/data/log/Dy_BulletScreen_Demo/stdout.log"/>
+    	<param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />  
+    	<param name="Append" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d{yyyy/MM/dd HH:mm:ss.SSS} %-5p] [%t] %c{2\} - %m%n"/>
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">  
+                <param name="LevelMax" value="INFO" />  
+                <param name="LevelMin" value="DEBUG" />  
+        </filter>
+    </appender> 
+
+     <!-- 必须项-->
+     <appender name="errorAppender" class="org.apache.log4j.DailyRollingFileAppender">
+     	<param name="Encoding" value="UTF-8" />
+     	<param name="File" value="/data/log/Dy_BulletScreen_Demo/stderr.log"/>
+     	<param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />  
+    	<param name="Append" value="true"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[%d{yyyy/MM/dd HH:mm:ss.SSS} %-5p] [%t] %c{2\} - %m%n"/>
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">  
+                <param name="LevelMax" value="ERROR" />  
+                <param name="LevelMin" value="WARN" />  
+        </filter>
+    </appender>
+    
+    <appender name="myConsole" class="org.apache.log4j.ConsoleAppender">  
+        <layout class="org.apache.log4j.PatternLayout">  
+            <param name="ConversionPattern"    
+                value="[%d{dd HH:mm:ss,SSS\} %-5p] [%t] [%c] - %m%n" />  
+        </layout>  
+        <!--过滤器设置输出的级别-->  
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">  
+            <param name="levelMin" value="debug" />  
+            <param name="levelMax" value="error" />  
+            <param name="AcceptOnMatch" value="true" />  
+        </filter>  
+    </appender>	
+
+	<!-- 必须项-->
+    <!-- 定义以com.dy.bulletscreen开头的类的日志级别 -->
+    <logger name="com.dy.bulletscreen" additivity="false"> 
+        <level value ="debug"/> 
+        <appender-ref ref="infoAppender"/>
+        <appender-ref ref="errorAppender"/>
+        <appender-ref ref="myConsole"/>
+    </logger>       
+	
+</log4j:configuration>
